@@ -1,0 +1,20 @@
+/* Vizient Theme, likely also CHA and OMNIA */
+:root {
+  --primary-color: #EC5C29;
+  --background-color: #ffffff;
+  --text-color: #28292B;
+}
+
+/* TODO: update the background and text colors */
+.provista-theme {
+  --primary-color: #5296D5;
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
+/* TODO: update the background and text colors */
+.excelerate-theme {
+  --primary-color: #478CB5;
+  --background-color: #ffffff;
+  --text-color: #333333;
+}

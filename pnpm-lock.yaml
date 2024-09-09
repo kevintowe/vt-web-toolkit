@@ -11,6 +11,9 @@ importers:
       '@stencil/core':
         specifier: ^4.7.0
         version: 4.21.0
+      '@stencil/store':
+        specifier: ^2.0.16
+        version: 2.0.16(@stencil/core@4.21.0)
       '@types/jest':
         specifier: ^29.5.6
         version: 29.5.12
@@ -312,6 +315,12 @@ packages:
     resolution: {integrity: sha512-v50lnVbzS8mpMSnEVxR+G75XpvxHKtkJaQrNPE8+/fF6Ppr5z4bcdcBhcP8LPfEW+4BZcic6VifMXRwTopc+kw==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
+
+  '@stencil/store@2.0.16':
+    resolution: {integrity: sha512-ET3EByKlmNyTA8O+tcp5YWePOiVnPIiuoiIaxTrf3zFFVo7JWVsVoak9IE0UTn3MkIM0ubR9lgxvi70uN588/A==}
+    engines: {node: '>=12.0.0', npm: '>=6.0.0'}
+    peerDependencies:
+      '@stencil/core': '>=2.0.0 || >=3.0.0 || >= 4.0.0-beta.0 || >= 4.0.0'
 
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
@@ -1861,6 +1870,10 @@ snapshots:
       '@sinonjs/commons': 3.0.1
 
   '@stencil/core@4.21.0': {}
+
+  '@stencil/store@2.0.16(@stencil/core@4.21.0)':
+    dependencies:
+      '@stencil/core': 4.21.0
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
 

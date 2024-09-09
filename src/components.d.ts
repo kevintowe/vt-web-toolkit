@@ -6,56 +6,47 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface VizHeader {
+        "primaryText": string;
+    }
+    interface VizLogo {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLVizHeaderElement extends Components.VizHeader, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLVizHeaderElement: {
+        prototype: HTMLVizHeaderElement;
+        new (): HTMLVizHeaderElement;
+    };
+    interface HTMLVizLogoElement extends Components.VizLogo, HTMLStencilElement {
+    }
+    var HTMLVizLogoElement: {
+        prototype: HTMLVizLogoElement;
+        new (): HTMLVizLogoElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "viz-header": HTMLVizHeaderElement;
+        "viz-logo": HTMLVizLogoElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface VizHeader {
+        "primaryText"?: string;
+    }
+    interface VizLogo {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "viz-header": VizHeader;
+        "viz-logo": VizLogo;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "viz-header": LocalJSX.VizHeader & JSXBase.HTMLAttributes<HTMLVizHeaderElement>;
+            "viz-logo": LocalJSX.VizLogo & JSXBase.HTMLAttributes<HTMLVizLogoElement>;
         }
     }
 }
