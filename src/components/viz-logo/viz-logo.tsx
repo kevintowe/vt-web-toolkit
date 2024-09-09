@@ -1,5 +1,6 @@
 import { Component, getAssetPath, h } from '@stencil/core';
 import state from '../../store';
+import { getUserConfig } from '../../utils';
 
 @Component({
   tag: 'viz-logo',
@@ -8,12 +9,16 @@ import state from '../../store';
   assetsDirs: ['assets'],
 })
 export class VizLogo {
-  private get getAltText() {
+  componentWillLoad(): Promise<void> | void {
+    getUserConfig();
+  }
+
+  private get getLogoAltText() {
     return `${state.alliance} logo`;
   }
 
   render() {
     const imageSrc = getAssetPath(`./assets/${state.alliance}_logo.svg`);
-    return <img src={imageSrc} alt={this.getAltText} />;
+    return <img src={imageSrc} alt={this.getLogoAltText} />;
   }
 }
